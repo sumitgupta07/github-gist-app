@@ -1,10 +1,8 @@
 import {useState} from 'react';
-import {useHistory, useLocation} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
 const SearchGists = () => {
-  const {pathname} = useLocation();
-  const initialUsername = pathname.split('/')[2] || ''; // Initial state from pathname, if refresh or browse to /gists/<username> link directly
-  const [username, setUsername] = useState(initialUsername);
+  const [username, setUsername] = useState('');
   const history = useHistory();
 
   const handleChange = (e) => {
